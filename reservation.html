@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - Gourmet Bistro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ 
+ 
+ <header>
+    <div class="navbar" role="navigation" aria-label="Main Navigation">
+      <h1 class="logo">Gourmet Bistro</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+     
+        </ul>
+  
+      </nav>
+        <a href="#reservation" class="navbar-reserve cta-btn">Make a Reservation</a>
+    </div>
+  </header>
+
+
+  <section class="reservation">
+  <h2>Make a Reservation</h2>
+
+  <div class="reservation-content">
+
+   
+  <form aria-label="Reservation Form" class="reservation-form">
+   
+    <label for="name">Name</label>
+    <input id="name" type="text" placeholder="Your Name" required>
+    <label for="email">Email</label>
+    <input id="email" type="email" placeholder="Your Email" required>
+    <label for="phone">Phone Number</label>
+    <input id="phone" type="tel" placeholder="Phone Number" required>
+    <label for="date">Date</label>
+    <input id="date" type="date" required>
+    <label for="time">Time</label>
+    <input id="time" type="time" required>
+    <label for="requests">Special requests (optional)</label>
+    <textarea id="requests" placeholder="Special requests (optional)"></textarea>
+      <label for="guests">Number of Guests</label>
+      <input id="guests" type="number" min="1" max="20" value="1" required>
+
+    <label for="occasion">Occasion</label>
+    <select id="occasion">
+      <option value="birthday">Birthday</option>
+      <option value="anniversary">Anniversary</option>
+      <option value="business">Business Meeting</option>
+      <option value="other">Other</option>
+    </select>
+    <label for="preferences">Seating Preferences</label>
+    <select id="preferences">
+      <option value="indoor">Indoor</option>
+      <option value="outdoor">Outdoor</option>
+      <option value="window">Window Seat</option>
+      <option value="no-preference">No Preference</option>
+    </select>
+
+   <div class="form-buttons">
+    <button type="submit" class="form-button">Book Now</button>
+    </div>
+   
+ </form>
+
+    <div class="form-image">
+    <img src="images/caprese-salad-removebg-preview.png">
+    </div>
+ 
+  </div>
+</section>
+
+<section>
+    <h2>Follow Us</h2>
+    <p>Stay updated with our latest news and offers on social media!</p>
+    <ul>
+      <li><a href="https://facebook.com/gourmetbistro">Facebook</a></li>
+      <li><a href="https://instagram.com/gourmetbistro">Instagram</a></li>
+      <li><a href="https://twitter.com/gourmetbistro">Twitter</a></li>
+    </ul>
+
+  <footer>
+    <p>&copy; 2025 Gourmet Bistro. All rights reserved.</p>
+  </footer>
+</body>
+</html>

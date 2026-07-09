@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Menu - Gourmet Bistro</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+<div class="navbar" role="navigation" aria-label="Main Navigation">
+<h1 class="logo">Gourmet Bistro</h1>
+
+<ul>
+  <li><a href="home.html">Home</a></li>
+  <li><a href="menu.html">Menu</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
+<a href="reservation.html" class="navbar-reserve cta-btn"
+  >Make a Reservation</a
+>
+<div class="js-container">
+<a href="myCart.html" class="navbar-reserve js-addToCarts cta-btn" id="addToCarts">
+  My Cart 🛒 <span id="showCart" class="js-cart">0 </span></a
+>
+</div>
+</div>
+</nav>
+</header>
+
+<section class="menu-hero">
+<h2>Our Menu</h2>
+<div class="menu-hero-image">
+<!-- <img src="images/egusi-removebg-preview.png" alt="Menu Image" class="menu-img"> -->
+<div class="menu-text">
+<div class="text1" id="text-item1">
+  <h2 class="">
+    Discover our exquisite selection of dishes, from traditional
+    Nigerian cuisine to international favorites.
+  </h2>
+  <p class="">
+    We can't wait to welcome you and share our passion for food with
+    you.
+  </p>
+  <p class="">
+    Explore our menu today and discover the delicious offerings that
+    await you.
+  </p>
+  <p class="">
+    Join us for a meal that celebrates the rich flavors and traditions
+    of Nigerian cuisine.
+  </p>
+</div>
+<div class="text1" id="text-item2">
+  <!-- <img src="images/egusi-removebg-preview.png" alt="Menu Image" class="menu-image"> -->
+  <button class="menu-btn">Place your order Now</button>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<section class="menu-list">
+<h2>Our Menu Highlights</h2>
+<div class="menu-nav">
+<button class="menu-tab active" data-menu="pasta">Pasta Variety</button>
+<button class="menu-tab" data-menu="confectionery">
+Confectionery
+</button>
+<button class="menu-tab" data-menu="dessert">Dessert</button>
+<button class="menu-tab" data-menu="salad">Salad</button>
+<button class="menu-tab" data-menu="soft-drink">Soft drinks</button>
+<button class="menu-tab" data-menu="cocktails">Cocktails</button>
+<button class="menu-tab" data-menu="sandwich">Sandwich</button>
+<button class="menu-tab" data-menu="burgers">Burgers</button>
+<button class="menu-tab" data-menu="soups">Soups</button>
+<button class="menu-tab" data-menu="swallow">Swallow</button>
+</div>
+
+<div class="menu-contents">
+<ul class="menu-content" id="menu-pasta">
+<div class="food-list">
+  <div class="food-item">
+    <li>
+      <img
+        src="images/bolognese-removebg-preview.png"
+        alt="Pasta Variety"
+        class="menu-image"
+        width="100"
+      />
+      <div class="menu-item">
+        <strong> Bolognese </strong>
+        <span>#1500</span>
+      </div>
+      <p class="lists">Classic Italian pasta with rich meat sauce.</p>
+      <div class="cart-btn">
+        <button
+          class="cart"
+          id="add"
+        onclick="addToCart('Bolognese', 1500, 'images/bolognese-removebg-preview.png')
+
+    "
+        >
+          Add to cart
+        </button>
+        <button class="cart" id="remove" onclick="removeFromCart('Bolognese');">
+          Remove
+        </button>
+      </div>
+    </li>
+  </div>
+
+  <div class="food-item">
+    <li>
+      <img
+        src="images/penne-removebg-preview.png"
+        alt="Penne Alfredo"
+        class="menu-image"
+      />
+      <div class="menu-item">
+        <strong>Penne Alfredo</strong>
+        <span>#2500</span>
+      </div>
+      <p class="list">
+        Creamy Alfredo special sauce with penne pasta mixed.
+      </p>
+      <div class="cart-btn">
+        <button
+          class="cart"
+          id="add"
+          onclick="addToCart('Penne Alfredo', 2500, 'images/penne-removebg-preview.png');
+    "
+        >
+          Add to cart
+        </button>
+        <button class="cart" id="remove" onclick="removeFromCart('Penne Alfredo');">
+          Remove
+        </button>
+      </div>
+    </li>
+  </div>
+
+  <div class="food-item">
+    <li>
+      <img
+        src="images/lasagnas-removebg-preview.png"
+        alt="Lasagna"
+        class="menu-image"
+      />
+      <div class="menu-item">
+        <strong>Lasagna</strong>
+        <span>#3000</span>
+      </div>
+      <p class="list">
+        Layered pasta with cheese, meat, and tomato sauce.
+      </p>
+      <div class="cart-btn">
+        <button
+          class="cart"
+          id="add"
+          onclick="addToCart('Lasagna', 3000, 'images/-removebg-preview.png');
+    "
+        >
+          Add to cart
+        </button>
+        <button class="cart" id="remove" onclick="removeFromCart('Lasagna');">
+          Remove
+        </button>
+      </div>
+    </li>
+  </div>
+  <div class="food-item">
+    <li>
+<img
+src="images/seafoods-removebg-preview.png"
+alt="Seafood Pasta"
+class="menu-image"
+/>
+<div class="menu-item">
+<strong>Seafood Pasta</strong>
+<span>#3500</span>
+</div>
+<p class="list">
+Pasta tossed with shrimp, calamari, and light tomato sauce.
+</p>
+<div class="cart-btn">
+<button
+class="cart"
+id="add"
+onclick="addToCart('Seafood Pasta', 3500, 'images/seafoods-removebg-preview.png');
+"
+>
+Add to cart
+</button>
+<button class="cart" id="remove" onclick="removeFromCart('Seafood Pasta');">
+Remove
+</button>
+</div>
+</li>
+</div>
+
+<div class="food-item">
+<li>
+<img
+src="images/chinese-removebg-preview.png"
+alt="Chinese Pasta"
+class="menu-image"
+/>
+<div class="menu-item">
+<strong>Chinese Pasta</strong>
+<span>#2800</span>
+</div>
+<p class="list">
+Pasta tossed with shrimp, calamari, and sauce.
+</p>
+<div class="cart-btn">
+<button
+class="cart"
+id="add"
+onclick="addToCart('Chinese Pasta', 2800, 'images/chinese-removebg-preview.png');
+"
+>
+Add to cart
+</button>
+<button class="cart" id="remove" onclick="removeFromCart('Chinese Pasta');">
+Remove
+</button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+src="images/eba-removebg-preview.png"
+alt="Vegetable Pasta"
+class="menu-image"
+/>
+<div class="menu-item">
+<strong>Vegetable Pasta</strong>
+<span>#2000</span>
+</div>
+<p class="lists">
+A light pasta dish with seasonal vegetables.
+</p>
+<div class="cart-btn">
+<button
+class="cart"
+id="add"
+onclick="addToCart('Vegetable Pasta', 2000, 'images/eba-removebg-preview.png');
+"
+>
+Add to cart
+</button>
+<button class="cart" id="remove" onclick="removeFromCart('Vegetable Pasta');">
+Remove
+</button>
+</div>
+</li>
+</div>
+
+<div class="food-item">
+<li>
+<img
+  src="images/seafoods-removebg-preview.png"
+  alt="Seafood Pasta"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Seafood Pasta</strong>
+  <span>#3500</span>
+</div>
+<p class="list">
+  Pasta tossed with shrimp, calamari, and light tomato sauce.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Seafood Pasta', 3500, 'images/seafoods-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Seafood Pasta');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/chinese-removebg-preview.png"
+  alt="Chinese Pasta"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Chinese Pasta</strong>
+  <span>#2800</span>
+</div>
+<p class="list">
+  Pasta tossed with shrimp, calamari, and sauce.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Chinese Pasta', 2800, 'images/chinese-removebg-preview.png');
+"
+>
+Add to cart
+</button>
+<button class="cart" id="remove" onclick="removeFromCart('Chinese Pasta');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/greek-salad-removebg-preview.png"
+  alt="Vegetable Pasta"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Vegetable Pasta</strong>
+  <span>#2000</span>
+</div>
+<p class="lists">
+  A light pasta dish with seasonal vegetables.
+</p>
+<div class="cart-btn">
+  <button class="cart" id="add" onclick="addToCart('Vegetable Pasta', 2000, 'images/greek-salad-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Vegetable Pasta');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/seafoods-removebg-preview.png"
+  alt="Seafood Pasta"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Seafood Pasta</strong>
+  <span>#3500</span>
+</div>
+<p class="list">
+  Pasta tossed with shrimp, calamari, and light tomato sauce.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Seafood Pasta', 3500, 'images/seafoods-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Seafood Pasta');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+</div>
+
+<p class="menu-description">
+Indulge in our pasta variety, featuring classic dishes like
+Spaghetti Bolognese, creamy Penne Alfredo, and hearty Lasagna.
+Perfect for pasta lovers!
+</p>
+
+<p class="see-more"><a href="menu.html">Order Now</a></p>
+</ul>
+
+<ul class="menu-content" id="menu-confectionery">
+<div class="food-list">
+<div class="food-item">
+<li>
+<img
+  src="images/croissant-removebg-preview.png"
+  alt="Croissants"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Croissants</strong>
+  <span>#800</span>
+</div>
+<p class="list">Flaky, buttery French pastries.</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Croissants', 3500, 'images/croissant-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Croissants');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/chocolate_cake-removebg-preview.png"
+  alt="Chocolate Cake"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Chocolate Cake</strong>
+  <span>#1500</span>
+</div>
+<p class="list">Rich and moist chocolate layers.</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Chocolate Cake', 1500, 'images/chocolate_cake-removebg-preview.png');
+"
+  >
+                    Add to cart
+                  </button>
+                  <button class="cart" id="remove" onclick="removeFromCart('Chocolate Cake');">
+                    Remove
+                  </button>
+                </div>
+              </li>
+            </div>
+            <div class="food-item">
+              <li>
+                <img
+                  src="images/fruit_tarts-removebg-preview.png"
+                  alt="Fruit Tart"
+                  class="menu-image"
+                />
+                <div class="menu-item">
+                  <strong>Fruit Tart</strong>
+                  <span>#1200</span>
+                </div>
+                <p class="list">Buttery crust with fresh fruit and custard.</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Fruit Tart', 1200, 'images/fruit_tarts-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Fruit Tart');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/macaron-removebg-preview.png"
+  alt="Macarons"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Macarons</strong>
+  <span>#1000</span>
+</div>
+<p class="list">Delicate French almond cookies.</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Macarons', 1000, 'images/macaron-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Macarons');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/croissant-removebg-preview.png"
+  alt="Croissants"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Croissants</strong>
+  <span>#800</span>
+</div>
+<p class="list">Flaky, buttery French pastries.</p>
+
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Croissants', 3500, 'images/croissant-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Croissants');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/macaron-removebg-preview.png"
+  alt="Macarons"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Macarons</strong>
+  <span>#1000</span>
+</div>
+<p class="list">Delicate French almond cookies.</p>
+<div class="cart-btn">
+   <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Macarons', 1000, 'images/macaron-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Macarons');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+
+<div class="food-item">
+<li>
+<img
+  src="images/fruit_tarts-removebg-preview.png"
+  alt="Fruit Tart"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Fruit Tart</strong>
+  <span>#1200</span>
+</div>
+<p class="list">Buttery crust with fresh fruit and custard.</p>
+
+<div class="cart-btn">
+   <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Fruit Tart', 1200, 'images/fruit_tarts-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Fruit Tart');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/chocolate_cake-removebg-preview.png"
+  alt="Chocolate Cake"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Chocolate Cake</strong>
+  <span>#1500</span>
+</div>
+<p class="list">Rich and moist chocolate layers.</p>
+
+<div class="cart-btn">
+ <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Chocolate Cake', 1500, 'images/chocolate_cake-removebg-preview.png');
+"
+  >
+                    Add to cart
+                  </button>
+                  <button class="cart" id="remove" onclick="removeFromCart('Chocolate Cake');">
+                    Remove
+                  </button>
+</div>
+</li>
+</div>
+</div>
+
+<p class="menu-description">
+Satisfy your sweet tooth with our confectionery delights, including
+rich Chocolate Cake, fresh Fruit Tart, and delicate Macarons.
+Perfect for dessert lovers!
+</p>
+<p class="see-more"><a href="menu.html"> Order Now</a></p>
+</ul>
+
+<ul class="menu-content" id="menu-dessert">
+<div class="food-list">
+<div class="food-item">
+<li>
+<img
+  src="images/cheesecake-removebg-preview.png"
+  alt="Cheesecake"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Cheesecake</strong>
+  <span>#2500</span>
+</div>
+<p class="lists">
+  Creamy cheesecake with a graham cracker crust.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Cheesecake', 2500, 'images/cheesecake-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Cheesecake');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+
+<div class="food-item">
+<li>
+<img
+  src="images/tiramisu-removebg-preview.png"
+  alt="Tiramisu"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Tiramisu</strong>
+  <span>#1000</span>
+</div>
+<p class="list1">
+  Italian dessert with coffee-soaked ladyfingers and mascarpone.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Tiramisu', 1000, 'images/tiramisu-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Tiramisu');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+
+<div class="food-item">
+<li>
+<img
+  src="images/icecream-removebg-preview.png"
+  alt="Ice Cream Sundae"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Ice Cream Sundae</strong>
+  <span>#3500</span>
+</div>
+<p class="list">
+  Vanilla ice cream topped with chocolate sauce and nuts.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Ice Cream Sundae', 3500, 'images/icecream-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Ice Cream Sundae');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/applepie-removebg-preview.png"
+  alt="Apple Pie"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Apple Pie</strong>
+  <span>#2000</span>
+</div>
+<p class="lists">Pie with spiced apples and flaky crust.</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Apple Pie', 2000, 'images/applepie-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Apple Pie');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/brownie-removebg-preview.png"
+  alt="Chocolate Brownie"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Chocolate Brownie</strong>
+  <span>#4000</span>
+</div>
+
+<p class="list">Rich, fudgy brownie served warm.</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Chocolate Brownie', 4000, 'images/brownie-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Chocolate Brownie');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+</div>
+<p class="menu-description">
+Indulge in our dessert selection, featuring creamy Cheesecake, rich
+Chocolate Cake, and fresh Fruit Tart. Perfect for satisfying your
+sweet cravings!
+</p>
+<p class="see-more"><a href="menu.html"> Order Now</a></p>
+</ul>
+
+<ul class="menu-content" id="menu-salad" style="display: none">
+<div class="food-list">
+<div class="food-item">
+<li>
+<img
+  src="images/caesar-salad-removebg-preview.png"
+  alt="Caesar Salad"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Caesar Salad</strong>
+  <span>#2000</span>
+</div>
+<p class="list">
+  Romaine lettuce, croutons, parmesan, and Caesar dressing.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Caesar Salad', 2000, 'images/caesar-salad-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Caesar Salad');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/greek-salad-removebg-preview.png"
+  alt="Greek Salad"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Greek Salad</strong>
+  <span>#1000</span>
+</div>
+<p class="list">
+  Mixed greens, feta cheese, olives, tomatoes, and cucumbers.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Greek Salad', 1000,'images/greek-salad-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Greek Salad');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/caprese-salad-removebg-preview.png"
+  alt="Caprese Salad"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Caprese Salad</strong>
+  <span>#2000</span>
+</div>
+<p class="list">
+  Fresh mozzarella, tomatoes, basil, and balsamic glaze.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Caprese Salad', 2000, 'images/caprese-salad-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Caprese Salad');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+</div>
+<p class="menu-description">
+Enjoy our fresh salads, from classic Caesar to Mediterranean Greek
+and Caprese, perfect for a light and healthy meal!
+</p>
+<p class="see-more"><a href="menu.html"> Order Now</a></p>
+</ul>
+
+<ul class="menu-content" id="menu-soft-drink" style="display: none">
+<div class="food-list">
+<div class="food-item">
+<li>
+<img
+  src="images/coke-removebg-preview.png"
+  alt="Coke"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Coke</strong>
+  <span>#1500</span>
+</div>
+<p class="list1">Chilled classic Coca-Cola.</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Coke', 1500, 'images/coke-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Coke');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/sprite-removebg-preview.png"
+  alt="Sprite"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Sprite</strong>
+  <span>#2500</span>
+</div>
+<p class="list1">lemon-lime soda.</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Sprite', 2500, 'images/sprite-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Sprite');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/fanta-removebg-preview.png"
+  alt="Fanta"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Fanta</strong>
+  <span>#1000</span>
+</div>
+<p class="list1">Fruity orange-flavored soda.</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Fanta', 1000, 'images/fanta-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Fanta');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+</div>
+<p class="menu-description">
+Quench your thirst with our selection of soft drinks, including
+Coke, Sprite, and Fanta.
+</p>
+<p class="see-more"><a href="menu.html">Order Now</a></p>
+</ul>
+
+<ul class="menu-content" id="menu-cocktails" style="display: none">
+<div class="food-list">
+<div class="food-item">
+<li>
+<img
+  src="images/mojitoblue-removebg-preview.png"
+  alt="Mojito"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Mojito</strong>
+  <span>#3000</span>
+</div>
+<p class="list1">
+  Classic Cuban cocktail with mint, lime, and rum.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Mojito', 3000, 'images/mojitoblue-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Mojito');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/pina-colada-removebg-preview.png"
+  alt="Pina Colada"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Pina Colada</strong>
+  <span>#3500</span>
+</div>
+<p class="list1">
+  Creamy blend of pineapple, coconut, and rum.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Pina Colada', 3500, 'images/pina-colada-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Pina Colada');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/margaritas-removebg-preview.png"
+  alt="Margarita"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Margarita</strong>
+  <span>#4000</span>
+</div>
+<p class="list1">
+  Tequila, lime juice, and triple sec served on the rocks.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Margarita', 4000, 'images/margaritas-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Margarita');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+</div>
+<p class="menu-description">
+Sip on our signature cocktails, from refreshing Mojitos to tropical
+Pina Coladas and zesty Margaritas.
+</p>
+<p class="see-more"><a href="menu.html">Order Now</a></p>
+</ul>
+
+<ul class="menu-content" id="menu-sandwich" style="display: none">
+<div class="food-list">
+<div class="food-item">
+<li>
+<img
+  src="images/club-sandwich-removebg-preview.png"
+  alt="Club Sandwich"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Club Sandwich</strong>
+  <span>#3500</span>
+</div>
+<p class="list">
+  Triple-layered sandwich with chicken, bacon, lettuce, and
+  tomato.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Club Sandwich', 3500, 'images/club-sandwich-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Club Sandwich');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/blt-sandwich-removebg-preview.png"
+  alt="BLT Sandwich"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>BLT Sandwich</strong>
+  <span>#2800</span>
+</div>
+<p class="lists">
+  Crispy bacon, lettuce, and tomato on toasted bread.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('BLT Sandwich', 2800, 'images/blt-sandwich-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('BLT Sandwich');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/grilled-cheese-removebg-preview.png"
+  alt="Grilled Cheese Sandwich"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Grilled Cheese Sandwich</strong><span>#4000</span>
+</div>
+<p class="lists">Golden toasted bread with melted cheese.</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Grilled Cheese Sandwich', 4000, 'images/grilled-cheese-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Grilled Cheese Sandwich');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+</div>
+<p class="menu-description">
+Try our delicious sandwiches, including the classic Club, BLT, and
+gooey Grilled Cheese.
+</p>
+<p class="see-more"><a href="menu.html"> Order Now</a></p>
+</ul>
+
+<ul class="menu-content" id="menu-burgers" style="display: none">
+<div class="food-list">
+<div class="food-item">
+<li>
+<img
+  src="images/cheeseburger-removebg-preview.png"
+  alt="Cheeseburger"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Cheeseburger</strong>
+  <span>#5000</span>
+</div>
+<p class="list1">
+  Juicy beef patty with cheddar cheese, lettuce, and tomato.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Cheeseburger', 5000, 'images/cheeseburger-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Cheeseburger');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/hamburger-removebg-preview.png"
+  alt="Bacon Burger"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Bacon Burger</strong>
+  <span>#2500</span>
+</div>
+<p class="list1">
+  Beef burger topped with crispy bacon and cheese.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Bacon Burger', 2500, 'images/hamburger-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Bacon Burger');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+<div class="food-item">
+<li>
+<img
+  src="images/veggies-removebg-preview.png"
+  alt="Veggie Burger"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Veggie Burger</strong>
+  <span>#6700</span>
+</div>
+<p class="list1">plant-based patty with fresh veggies.</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Veggie Burger', 6700, 'images/veggies-removebg-preview.png');
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Veggie Burger');">
+    Remove
+  </button>
+</div>
+</li>
+</div>
+</div>
+<p class="menu-description">
+Savor our burger selection, from classic Cheeseburgers to Bacon
+Burgers and Veggie options.
+</p>
+<p class="see-more"><a href="menu.html"> Order Now</a></p>
+</ul>
+
+<ul class="menu-content" id="menu-soups" style="display: none">
+<div class="food-list">
+<div class="food-item">
+<li>
+<img
+  src="images/chicken-soup-removebg-preview.png"
+  alt="Chicken Soup"
+  class="menu-image"
+/>
+<div class="menu-item">
+  <strong>Chicken Soup</strong>
+  <span>#2800</span>
+</div>
+<p class="list">
+  Hearty chicken broth with vegetables and noodles.
+</p>
+<div class="cart-btn">
+  <button
+    class="cart"
+    id="add"
+    onclick="addToCart('Chicken Soup', 2800, 'images/chicken-soup-removebg-preview.png' );
+"
+  >
+    Add to cart
+  </button>
+  <button class="cart" id="remove" onclick="removeFromCart('Chicken Soup');">
+                    Remove
+                  </button>
+                </div>
+              </li>
+            </div>
+            <div class="food-item">
+              <li>
+                <img
+                  src="images/minestrone-removebg-preview.png"
+                  alt="Minestrone Soup"
+                  class="menu-image"
+                />
+                <div class="menu-item">
+                  <strong>Minestrone Soup</strong>
+                  <span>#4000</span>
+                </div>
+                <p class="list">Italian vegetable soup with beans and pasta.</p>
+                <div class="cart-btn">
+                  <button
+                    class="cart"
+                    id="add"
+                    onclick="addToCart('Minestrone Soup', 4000, 'images/minestrone-removebg-preview.png');
+              "
+                  >
+                    Add to cart
+                  </button>
+                  <button class="cart" id="remove" onclick="removeFromCart('Minestrone Soup');">
+                    Remove
+                  </button>
+                </div>
+              </li>
+            </div>
+            <div class="food-item">
+              <li>
+                <img
+                  src="images/lentil-soup-removebg-preview.png"
+                  alt="Lentil Soup"
+                  class="menu-image"
+                />
+                <div class="menu-item">
+                  <strong>Lentil Soup</strong>
+                  <span>#3000</span>
+                </div>
+                <p class="list">
+                  Nutritious lentil soup with spices and herbs.
+                </p>
+                <div class="cart-btn">
+                  <button
+                    class="cart"
+                    id="add"
+                    onclick="addToCart('Lentil Soup', 3000, 'images/lentil-soup-removebg-preview.png');
+              "
+                  >
+                    Add to cart
+                  </button>
+                  <button class="cart" id="remove" onclick="removeFromCart('Lentil Soup');">
+                    Remove
+                  </button>
+                </div>
+              </li>
+            </div>
+          </div>
+          <p class="menu-description">
+            Warm up with our comforting soups, including Chicken, Minestrone,
+            and Lentil Soup.
+          </p>
+          <p class="see-more"><a href="menu.html"> Order Now</a></p>
+        </ul>
+
+        <ul class="menu-content" id="menu-swallow" style="display: none">
+          <div class="food-list">
+            <div class="food-item">
+              <li>
+                <img
+                  src="images/pounded-yam-removebg-preview.png"
+                  alt="Pounded Yam with Egusi Soup"
+                  class="menu-image"
+                />
+                <div class="menu-item">
+                  <strong>Pounded Yam with Egusi Soup</strong>
+                  <span>#1200</span>
+                </div>
+                <p class="list">yam served with rich melon seed soup.</p>
+                <div class="cart-btn">
+                  <button
+                    class="cart"
+                    id="add"
+                    onclick="addToCart('Pounded Yam with Egusi Soup', 1200, 'images/pounded-yam-removebg-preview.png');
+              "
+                  >
+                    Add to cart
+                  </button>
+                  <button class="cart" id="remove" onclick="removeFromCart('Pounded Yam with Egusi Soup');">
+                    Remove
+                  </button>
+                </div>
+              </li>
+            </div>
+            <div class="food-item">
+              <li>
+                <img
+                  src="images/eba-removebg-preview.png"
+                  alt="Efo Riro with Eba"
+                  class="menu-image"
+                />
+                <div class="menu-item">
+                  <strong>Efo Riro with Eba</strong>
+                  <span>#2800</span>
+                </div>
+                <p class="list">Spinach stew served with cassava dough.</p>
+                <div class="cart-btn">
+                  <button
+                    class="cart"
+                    id="add"
+                    onclick="addToCart('Efo Riro with Eba', 2800, 'images/eba-removebg-preview.png');
+              "
+                  >
+                    Add to cart
+                  </button>
+                  <button class="cart" id="remove" onclick="removeFromCart('Efo Riro with Eba');">
+                    Remove
+                  </button>
+                </div>
+              </li>
+            </div>
+            <div class="food-item">
+              <li>
+                <img
+                  src="images/fufu-removebg-preview.png"
+                  alt="Fufu with Ogbono Soup"
+                  class="menu-image"
+                />
+                <div class="menu-item">
+                  <strong>Fufu with Ogbono Soup</strong>
+                  <span>#2500</span>
+                </div>
+                <p class="list">Fermented cassava with wild mango seed soup.</p>
+                <div class="cart-btn">
+                  <button
+                    class="cart"
+                    id="add"
+                    onclick="addToCart('Fufu with Ogbono Soup', 2500, 'images/fufu-removebg-preview.png');
+              "
+                  >
+                    Add to cart
+                  </button>
+                  <button class="cart" id="remove" onclick="removeFromCart('Fufu with Ogbono Soup');">
+                    Remove
+                  </button>
+                </div>
+              </li>
+            </div>
+          </div>
+          <p class="menu-description">
+            Experience authentic Nigerian swallow dishes like Pounded Yam, Efo
+            Riro, and Fufu with Ogbono Soup.
+          </p>
+          <p class="see-more"><a href="menu.html"> Order Now</a></p>
+        </ul>
+
+      </div>
+    </section>
+
+    <section class="gallery">
+  <h2>Our Gallery</h2>
+  <div class="gallery-grid">
+    <img src="images/jollofrice.jfif" alt="Jollof Rice">
+    <img src="images/view11.jfif" alt="Suya Platter">
+    <img src="images/view12.jfif" alt="Pounded Yam">
+    <img src="images/view-removebg-preview.png" alt="">
+    <img src="images/view0.jfif" alt="Delicious Dish">
+    <img src="images/view1.jfif" alt="Tasty Meal">
+    <img src="images/view2.jfif" alt="Delicious Dish">
+    <img src="images/view3.jfif" alt="Tasty Meal">
+    <img src="images/view4.jfif" alt="Delicious Dish">
+    <img src="images/view5.jfif" alt="Tasty Meal">
+    <img src="images/view6.jfif" alt="Delicious Dish">
+    <img src="images/view7.jfif" alt="Tasty Meal">
+  </div>
+   <div class="see-more">
+    <a href="gallery.html">See more &rarr;</a>
+  </div>
+</section>
+
+   <!-- <section> -->
+    <!-- <h2>Get in Touch</h2> -->
+    <!--  <p>📍 12 Victoria Island Rd, Lagos<br>📞 +234 800 555 1234<br>✉️ contact@gourmetbistro.com</p> -->
+
+    <!-- <form> -->
+      <!-- <input type="text" placeholder="Your Name" required> -->
+      <!-- <input type="email" placeholder="Your Email" required> -->
+      <!-- <textarea placeholder="Your Message" required></textarea> -->
+      <!-- <button type="submit">Send Message</button> -->
+    <!-- </form> -->
+  <!-- </section> -->
+
+
+
+   
+
+
+<section class="location">
+  <h2>Visit Us</h2>
+  <div class="contact-info">
+  <div>
+  <ul class="">
+    <strong>Contact</strong>
+    <li><span aria-label="Location" role="img">📍</span> 12 Victoria Island Rd, Lagos</li>
+    <li><span aria-label="Phone" role="img">📞</span> +234 800 555 1234</li>
+    <li><span aria-label="Email" role="img">✉️</span> info@gourmetbistro.com</li>
+    
+  </ul>
+  </div>
+
+  <div>
+    <ul>
+    <strong>Our Services</strong>
+
+    <li>Catering</li>
+    <li>Birthday</li>
+    <li>House Warming</li>
+    <li>And many more</li>
+    </ul>
+  </div>
+
+   <ul>
+    <strong>Opening Hours</strong>
+    <li>Monday - Friday: 10:00 AM - 10:00 PM</li>
+    <li>Saturday - Sunday: 9:00 AM - 11:00 PM</li>
+
+  </ul>
+ <ul>
+   <strong>Follow Us</strong>   
+      <li><a href="https://facebook.com/gourmetbistro">Facebook</a></li>
+      <li><a href="https://instagram.com/gourmetbistro">Instagram</a></li>
+      <li><a href="https://twitter.com/gourmetbistro">Twitter</a></li>
+    </ul>
+
+  </div>
+
+  <div class="contact-map"> 
+    <ul>
+    <h2>Find Us</h2>
+    <li>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15858.881729242325!2d3.4123719938494097!3d6.429949796977123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf52dc0328169%3A0x7885a1a33689a576!2sVictoria%20Island%2C%20Lagos%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1754059701755!5m2!1sen!2sng" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Gourmet Bistro. All rights reserved.</p>
+</footer>
+<script>
+   
+  </script>
+
+
+<script src="main.js"></script>
+<!-- <script src="checkOut.js"></script> -->
+</html>

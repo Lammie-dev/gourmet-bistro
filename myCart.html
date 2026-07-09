@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Cart- Gourmet Bistro</title>
+    <link rel="stylesheet" href="styles.css" />
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <header>
+      <nav>
+<div class="navbar" role="navigation" aria-label="Main Navigation">
+<h1 class="logo">Gourmet Bistro</h1>
+
+<ul>
+  <li><a href="home.html">Home</a></li>
+  <li><a href="menu.html">Menu</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
+<a href="reservation.html" class="navbar-reserve cta-btn"
+  >Make a Reservation</a
+>
+</div>
+</nav>
+</header>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #ffd700;
+    
+    }
+    .myCarts{
+      background-color: transparent;
+    }
+    .carts {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .cart-header {
+      /* display: flex;
+      justify-content: space-between; */
+      display: grid;
+  grid-template-columns: 2fr 1fr 70px;
+gap: 20px;
+      font-weight: bold;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+    }
+    .cartList {
+      margin-top: 20px;
+    }
+    .cartItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .cart-content {
+      flex: 2;
+    }
+    .cart-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .cart-price {
+      font-size: 14px;
+      color: #555;
+    }
+    .cartQuantity {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .cartQuantity button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background: #ddd;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .cart-value {
+      font-weight: bold;
+      width: 25px;
+      text-align: center;
+    }
+    .cart-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .cart-close,
+    .myCart a {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .subtotal {
+      margin-top: 20px;
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .cart-img {
+  margin-right: 15px;
+}
+.cart-img img {
+  border-radius: 6px;
+  object-fit: cover;
+}
+.cartItem {
+  gap: 10px;
+}
+.item-container{
+       display: grid;
+  grid-template-columns: 70px 70px;
+gap: 12rem;
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+<section class="myCarts" id="myCarts">
+  <div class="carts">
+    <h1>My Cart</h1>
+
+    <div class="cart-header">
+      <div style="flex:2;">Item</div>
+<!-- <div>Price</div> -->
+      <div>Quantity</div>
+      
+      <div>Subtotal</div>
+    </div>
+
+    <div class="cartList" id="cartList">
+      <!-- Cart items will be injected here -->
+    </div>
+
+    <div class="subtotal">
+      Total: ₦<span id="cart-total">0</span>
+    </div>
+
+    <div class="cart-buttons">
+      <div class="cart-close" onclick="window.location.href='menu.html'">CLOSE</div>
+      <div class="myCart">
+        <!-- <a href="#shippingDetails" class="next">Check-Out</a> -->
+         <button onclick="nextForm('myCarts','shippingDetails')">Next&laquo;</button>
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+ 
+
+
+<section id="shippingDetails" class="shipping" style="display: none;">
+  <div class="shipping-info" >
+
+<div class="customer-info">
+ 
+      <form aria-label="Shipping Form" class="shipping-form">
+   <div class="row">
+    <div class="col-50">
+      <h3>Customer Information</h3>
+    <label for="fname"><i class="fa fa-user"></i>First name</label>
+    <input id="name" type="text" placeholder="Your Name" required>
+    <label for="lname">Last name</label>
+    <input id="name" type="text" placeholder="Your Name" required>
+    <label for="email">Email</label>
+    <input id="email" type="email" placeholder="Your Email" required>
+    <label for="phone">Phone Number</label>
+    <input id="phone" type="tel" placeholder="Phone Number" required>
+    <label for="address">Address</label>
+    <textarea id="address" placeholder="Enter your home address" required></textarea>
+    <label for="country">Country</label>
+    <select>
+      <option>Nigeria</option>
+      <option>UK</option>
+      <option>Cameroon</option>
+    </select>
+    <label for="state/city">State / City</label>
+    <input id="state/city" type="text" placeholder="Enter your state or city" required>
+      </div>
+ 
+    <div class="delivery-info col-50">
+      <h4>Shipping Information</h4>
+      <label for="delivery-method">Delivery method</label>
+      <div class="delivery-option">
+      <input id="delivery-method" type="checkbox">Pick up
+        <input id="delivery-method" type="checkbox">Delivery
+        </div>
+    </div>
+    </div>
+   
+   </div>
+ </form>
+<div class="form-buttons ship-btn">
+     <button onclick="prevForm('shippingDetails', 'myCarts')">&laquo;Previous</button>
+     <button onclick="nextForm('shippingDetails', 'paymentSection')">Next&laquo;</button>
+    </div>
+   
+
+  </div>
+</section>
+
+
+
+<section id="paymentSection" style="display: none;">
+  <form>
+    <div class="row">
+   <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Lammie World">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2027">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <div>
+       <button onclick="prevForm('paymentSection', 'shippingDetails')">Previous</button>
+       <button onclick="checkout()">Checkout</button>
+       </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  function nextForm(currentId, nextId) {
+    document.getElementById(currentId).style.display = "none";
+    document.getElementById(nextId).style.display = "block";
+    scrollToTop();
+  }
+
+  function prevForm(currentId, previousId) {
+    document.getElementById(currentId).style.display = "none";
+    document.getElementById(previousId).style.display = "block";
+    scrollToTop();
+  }
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function checkout() {
+    alert("Thank you! Your order has been placed.");
+    // Optionally clear cart or redirect
+     localStorage.removeItem("cart");
+     window.location.href = "thank-you.html";
+  }
+</script>
+
+
+
+
+<!-- <section>
+
+<h2>Responsive Checkout Form</h2>
+<p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other.</p>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="New York">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="NY">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10001">
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+  <div class="col-25">
+    <div class="container">
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+      <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+      <hr>
+      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+    </div>
+  </div>
+</div>
+
+
+
+</section> -->
+
+
+
+
+
+
+  
+<section class="location">
+  <h2>Visit Us</h2>
+  <div class="contact-info">
+  <div>
+  <ul class="">
+    <strong>Contact</strong>
+    <li><span aria-label="Location" role="img">📍</span> 12 Victoria Island Rd, Lagos</li>
+    <li><span aria-label="Phone" role="img">📞</span> +234 800 555 1234</li>
+    <li><span aria-label="Email" role="img">✉️</span> info@gourmetbistro.com</li>
+    
+  </ul>
+  </div>
+
+  <div>
+    <ul>
+    <strong>Our Services</strong>
+
+    <li>Catering</li>
+    <li>Birthday</li>
+    <li>House Warming</li>
+    <li>And many more</li>
+    </ul>
+  </div>
+
+   <ul>
+    <strong>Opening Hours</strong>
+    <li>Monday - Friday: 10:00 AM - 10:00 PM</li>
+    <li>Saturday - Sunday: 9:00 AM - 11:00 PM</li>
+
+  </ul>
+ <ul>
+   <strong>Follow Us</strong>   
+      <li><a href="https://facebook.com/gourmetbistro">Facebook</a></li>
+      <li><a href="https://instagram.com/gourmetbistro">Instagram</a></li>
+      <li><a href="https://twitter.com/gourmetbistro">Twitter</a></li>
+    </ul>
+
+  </div>
+
+  <div class="contact-map"> 
+    <ul>
+    <h2>Find Us</h2>
+    <li>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15858.881729242325!2d3.4123719938494097!3d6.429949796977123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf52dc0328169%3A0x7885a1a33689a576!2sVictoria%20Island%2C%20Lagos%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1754059701755!5m2!1sen!2sng" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Gourmet Bistro. All rights reserved.</p>
+</footer>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartList = document.getElementById("cartList");
+    const totalDisplay = document.getElementById("cart-total");
+
+    function renderCart() {
+      cartList.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const cartItem = document.createElement("div");
+        cartItem.className = "cartItem";
+        cartItem.innerHTML = `
+         <div class="cart-image"><img src="${item.image}" alt="${item.name}" width="60" height="60">
+              </div>
+          <div class="cart-content">
+           
+            <div class="cart-name">${item.name}</div>
+           <div>₦${item.price}/ 1 item</div>
+          </div>
+         <div class="item-container">
+          <div class="cartQuantity">
+            <button onclick="changeQty(${index}, -1)">-</button>
+            <span class="cart-value">${item.quantity}</span>
+            <button onclick="changeQty(${index}, 1)">+</button>
+          </div>
+          
+          <div>₦${itemTotal}</div>
+          </div>
+        `;
+        cartList.appendChild(cartItem);
+      });
+
+      totalDisplay.textContent = total.toFixed(2);
+    }
+
+    function changeQty(index, delta) {
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+
+
+<script src="main.js"></script>
+<!-- <script src="checkOut.js"></script> -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

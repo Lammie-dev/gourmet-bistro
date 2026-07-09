@@ -1,0 +1,181 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cart Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .carts {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+    }
+    .cartList {
+      margin-top: 20px;
+    }
+    .cartItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .cart-content {
+      flex: 2;
+    }
+    .cart-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .cart-price {
+      font-size: 14px;
+      color: #555;
+    }
+    .cartQuantity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cartQuantity button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background: #ddd;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .cart-value {
+      font-weight: bold;
+      width: 25px;
+      text-align: center;
+    }
+    .cart-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .cart-close,
+    .checkout a {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .subtotal {
+      margin-top: 20px;
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .cart-img {
+  margin-right: 15px;
+}
+.cart-img img {
+  border-radius: 6px;
+  object-fit: cover;
+}
+.cartItem {
+  gap: 10px;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="carts">
+    <h2>Carts</h2>
+
+    <div class="cart-header">
+      <div style="flex:2;">Item</div>
+      <div>Qty</div>
+      <div>Price</div>
+      <div>Subtotal</div>
+    </div>
+
+    <div class="cartList" id="cartList">
+     
+     
+    </div>
+
+    <div class="subtotal">
+      Total: ₦<span id="cart-total">0</span>
+    </div>
+
+    <div class="cart-buttons">
+      <div class="cart-close" onclick="window.location.href='index.html'">CLOSE</div>
+      <div class="checkout">
+        <a href="checkout.html">Check-Out</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartList = document.getElementById("cartList");
+    const totalDisplay = document.getElementById("cart-total");
+
+    function renderCart() {
+      cartList.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const cartItem = document.createElement("div");
+        cartItem.className = "cartItem";
+        cartItem.innerHTML = `
+         <div class="cart-image"><img src="${item.image}" alt="${item.name}" width="60" height="60">
+              </div>
+          <div class="cart-content">
+           
+            <div class="cart-name">${item.name}</div>
+            <div class="cart-price">₦${item.price} / 1 item</div>
+          </div>
+          <div class="cartQuantity">
+            <button onclick="changeQty(${index}, -1)">-</button>
+            <span class="cart-value">${item.quantity}</span>
+            <button onclick="changeQty(${index}, 1)">+</button>
+          </div>
+          <div>₦${item.price}</div>
+          <div>₦${itemTotal}</div>
+        `;
+        cartList.appendChild(cartItem);
+      });
+
+      totalDisplay.textContent = total.toFixed(2);
+    }
+
+    function changeQty(index, delta) {
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+
+</body>
+</html>
+  -->
+ <!-- Cart items will be injected here -->

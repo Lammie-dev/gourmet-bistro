@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menu Page</title>
+  <style>
+    #cart-icon {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    #showCart {
+      background: red;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 50%;
+      font-size: 12px;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="cart.html" id="cart-icon">
+    🛒 <span id="showCart">0</span>
+  </a>
+
+  <h1>Pasta Menu</h1>
+  <div class="menu-contents">
+    <ul class="menu-content" id="menu-pasta">
+      <div class="food-list">
+        <div class="food-item">
+          <li>
+            <img src="images/bolognese-removebg-preview.png" alt="Pasta" class="menu-image" width="150" />
+            <div class="menu-item"><strong>Bolognese</strong> <span>₦1500</span></div>
+            <p class="lists">Classic Italian pasta with rich meat sauce.</p>
+            <div class="cart-btn">
+              <button class="cart" onclick="updateCart('Bolognese', 1500)">Add to cart</button>
+              <button class="cart" onclick="removeFromCart('Bolognese')">Remove</button>
+            </div>
+          </li>
+        </div>
+      </div>
+    </ul>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function updateCart(name, price) {
+      const index = cart.findIndex(item => item.name === name);
+      if (index >= 0) {
+        cart[index].quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartBadge();
+    }
+
+    function removeFromCart(name) {
+      const index = cart.findIndex(item => item.name === name);
+      if (index >= 0) {
+        if (cart[index].quantity > 1) {
+          cart[index].quantity -= 1;
+        } else {
+          cart.splice(index, 1);
+        }
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartBadge();
+      }
+    }
+
+    function updateCartBadge() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const showCart = document.getElementById("showCart");
+      showCart.textContent = totalItems;
+      showCart.style.display = totalItems === 0 ? "none" : "inline-block";
+    }
+
+    document.addEventListener("DOMContentLoaded", updateCartBadge);
+  </script>
+
+</body>
+</html>
