@@ -141,7 +141,40 @@ document.addEventListener("DOMContentLoaded", updateCartBadge);
 
 
 
+const form = document.getElementById("contact-form");
+const message = document.getElementById("form-message");
 
+form.addEventListener("submit", function(e){
 
+    e.preventDefault();
 
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const text = document.getElementById("message").value.trim();
 
+    const mailto =
+`mailto:oyelamiifeoluwa4@gmail.com?subject=${encodeURIComponent(subject)}
+
+&body=${encodeURIComponent(
+
+`Name: ${name}
+
+Email: ${email}
+
+Message:
+
+${text}`
+
+)}`;
+
+    window.location.href = mailto;
+
+    message.style.display="block";
+
+    form.reset();
+
+});
+// Footer year
+
+document.getElementById("year").textContent = new Date().getFullYear();
